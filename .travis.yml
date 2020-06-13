@@ -1,6 +1,11 @@
 language: node_js
 node_js:
   - "10"
+sudo: required
 branches:
   only:
   - master
+before_script:
+  - npm install -g @angular/cli
+script:
+- ng build --prod --base-href https://github.com/nordonezc/pokedex
