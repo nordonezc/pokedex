@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" *ngIf="pagination.pageNumber != 1">
+        <a class="page-link" href="/page/{{this.pagination.pageNumber-1}}">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="/page/{{this.pagination.pageNumber}}">{{this.pagination.pageNumber}}</a></li>
+      <li class="page-item"><a class="page-link" href="/page/{{this.pagination.pageNumber+1}}">{{this.pagination.pageNumber+1}}</a></li>
+      <li class="page-item"><a class="page-link" href="/page/{{this.pagination.pageNumber+2}}">{{this.pagination.pageNumber+2}}</a></li>
+      <li class="page-item" *ngIf="pagination.pageNumber != 2">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>

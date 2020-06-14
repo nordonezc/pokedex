@@ -4,9 +4,9 @@ import { WelcomeComponent } from './core/welcome/welcome.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: 'full'
+  { path: "", redirectTo: "/page/1", pathMatch: 'full'
 },
-  { path: "home", component: WelcomeComponent }];
+  { path: "page/:id", component: WelcomeComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

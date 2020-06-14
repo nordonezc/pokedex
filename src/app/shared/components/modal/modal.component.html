@@ -1,0 +1,61 @@
+<!-- Loading Modal -->
+<div
+  class="modal"
+  id="loadingModal"
+  data-backdrop="static"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="loadingModalLabel"
+  name="loadingModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header text-center">
+        <h5 class="modal-title" id="loadingModalLabel">
+          Feeding pidgeys...
+        </h5>
+      </div>
+      <div class="modal-body">
+        <img
+          src="https://cdn.dribbble.com/users/2105727/screenshots/4254712/getting_ready.gif"
+          alt=""
+          height="180"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Detail Modal -->
+<div
+  class="modal fade"
+  id="confirmationModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="confirmationModalLabel"
+  name="confirmationModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">
+          {{ this.modalService.modalInfo.tittle }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="this.modalService.close()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-detail></app-detail>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,20 @@
-<p>pokemon-card works!</p>
+<div class="row">
+  <div class="col-md-4" *ngFor="let pokemon of pokemonMap | keyvalue">
+    <div class="card mb-4 shadow-sm card-style" (click)="openDetailInfo(pokemon.key)">
+      <div class="card-body">
+        <h5 class="card-title">{{ pokemon.value.name }}</h5>
+      </div>
+      <img class="card-img-top" [src]="pokemon.value.image" alt="Card image cap" />
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>Type:</b> {{ pokemon.value.types }}</li>
+        <li class="list-group-item"><b>Weight:</b> {{ pokemon.value.weight }}</li>
+        <li class="list-group-item">
+          <b>Abilities:</b>
+          <ul>
+            <li *ngFor="let ability of pokemon.value.abilities">{{ ability }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
