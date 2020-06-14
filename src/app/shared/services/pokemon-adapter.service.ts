@@ -14,7 +14,7 @@ export class PokemonAdapterService {
   /**
    * URL to consume the pokemon adapter
    */
-  private urlPokemonAdapter = 'https://pokemon-adapter.herokuapp.com/pokemon/';
+  private urlPokemonAdapter = 'https://pokemon-adapter.herokuapp.com/';
 
   /**
    * Init the needed variables to use it along the service
@@ -27,6 +27,14 @@ export class PokemonAdapterService {
    * @param id - Pokemon id to consult
    */
   getPokemon(id: number): Observable<any>{
-    return this.httpClient.get(this.urlPokemonAdapter + id);
+    return this.httpClient.get(this.urlPokemonAdapter + "pokemon/" + id);
+  }
+
+  /**
+   * Get the information of the evolution to search
+   * @param id - Evolution id given in the pokemon consult
+   */
+  getEvolution(id: number): Observable<any>{
+    return this.httpClient.get(this.urlPokemonAdapter + "evolution/" + id);
   }
 }

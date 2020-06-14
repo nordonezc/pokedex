@@ -22,6 +22,9 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap) => {
       this.pagination.pageNumber = +paramMap.get('id');
+      if(this.pagination.pageNumber  % 1 != 0){
+        this.goToFixedPage(this.pagination.pageNumber);
+      }
       if(this.pagination.pageNumber>40){
         this.goToHigherPage()
       }
@@ -42,9 +45,6 @@ export class WelcomeComponent implements OnInit {
       this.pokemonAdapter.getPokemon(index + 1).subscribe(
         (answer) => {
           this.pokemonMap.set(index + 1, answer);
-        },
-        (error) => {
-          console.log('error' + error);
         }
       );
     }
@@ -63,6 +63,13 @@ export class WelcomeComponent implements OnInit {
    */
   goToHigherPage(){
     this.router.navigate(['/page', 41]);
+  }
+
+  /**
+   * Redirect to the page withouth decimals
+   */
+  goToFixedPage(page: number){
+    this.router.navigate(['/page', Math.trunc(page)]);
   }
 
 }

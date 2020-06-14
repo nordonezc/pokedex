@@ -1,22 +1,28 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../../models/pokemon';
 import { ModalService } from '../../services/modal.service';
+import { InformationDetail } from '../../models/evolution';
+import { PokemonAdapterService } from '../../services/pokemon-adapter.service';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
 
   public pokemon: Pokemon;
 
-  constructor(public httpClient: HttpClient, public modalService: ModalService) {
-   }
+  constructor(
+    public pokemonAdapter: PokemonAdapterService,
+    public modalService: ModalService
+  ) {}
 
   ngOnInit(): void {
     this.pokemon = this.modalService.modalInfo.pokemon;
   }
 
+  isIndexEqualToTotalEvolves(index: number, evolveDetail: InformationDetail[] ):boolean{
+    return index ==  evolveDetail.length-1;
+  }
 }

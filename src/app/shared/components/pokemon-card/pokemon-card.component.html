@@ -6,10 +6,10 @@
       </div>
       <img class="card-img-top" [src]="pokemon.value.image" alt="Card image cap" />
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><b>Type:</b> {{ pokemon.value.types }}</li>
-        <li class="list-group-item"><b>Weight:</b> {{ pokemon.value.weight }}</li>
+        <li class="list-group-item"><strong>Type:</strong> {{ pokemon.value.types }}</li>
+        <li class="list-group-item"><strong>Weight:</strong> {{ pokemon.value.weight }}</li>
         <li class="list-group-item">
-          <b>Abilities:</b>
+          <strong>Abilities:</strong>
           <ul>
             <li *ngFor="let ability of pokemon.value.abilities">{{ ability }}</li>
           </ul>
