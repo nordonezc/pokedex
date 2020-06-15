@@ -1,5 +1,10 @@
-.card-style{
+.card-style {
   height: 90%;
+}
+
+.card-style:hover {
+  animation: headShake;
+  animation-duration: 2s;
 }
 
 .card-body {
@@ -12,6 +17,6 @@
   align-self: center;
 }
 
-.list-group-item{
+.list-group-item {
   list-style-type: square;
 }
